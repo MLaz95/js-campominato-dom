@@ -26,7 +26,7 @@ buttonElement.addEventListener('click', function(){
         }
     }while (bombsArray.length < 16)
 
-    console.log(bombsArray);
+    console.log('bombs', bombsArray);
 
     // adds cells until the grid size limit is reached
     for(i = 1; i <= gridSize; i++){
@@ -48,11 +48,19 @@ buttonElement.addEventListener('click', function(){
 
         // on click behavior for each cell
         newCell.addEventListener('click', function(){
-            // if cell is a bomb marks it and prevents further interaction with the field
+            
             if(bombsArray.includes(cellValue)){
-                newCell.classList.add('bomb');
+                // cycles through all the cells and reveals all the bombs
+                const cellElements = Array.from(document.querySelectorAll('.cell'));
+                for(i = 0; i < cellElements.length; i++){
+                    if(bombsArray.includes(Number(cellElements[i].innerHTML))){
+                        cellElements[i].classList.add('bomb')
+                    }
+                }
+                // prevents further interaction with the grid
                 gridElement.classList.add('no-click');
                 resultElement.innerHTML = `You Lost! You found ${score} safe cells`;
+
             // reveals a new cell and increases score by 1
             }else if(!newCell.classList.contains('active')){
                 newCell.classList.add('active');
@@ -68,20 +76,9 @@ buttonElement.addEventListener('click', function(){
             
         });
 
-        gridElement.append(newCell);
-        
+        gridElement.append(newCell);   
     }
-
 })
-
-
-
-
-
-
-
-
-
 
 
 // FUNCTIONS
