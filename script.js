@@ -9,6 +9,19 @@ buttonElement.addEventListener('click', function(){
     // records grid size from difficulty selector
     let gridSize = difficultyElement.value;
 
+    // records where the bombs are
+    let bombsArray = [];
+
+    // picks a random cell and puts a bomb there if the cell is empty
+    do{
+        const bomb = randomNumber(gridSize);
+        if(!bombsArray.includes(bomb)){
+            bombsArray.push(bomb);
+        }
+    }while (bombsArray.length < 16)
+
+    console.log(bombsArray);
+
     // adds cells until the grid size limit is reached
     for(i = 1; i <= gridSize; i++){
         const newCell = document.createElement('div');
@@ -34,3 +47,20 @@ buttonElement.addEventListener('click', function(){
         gridElement.append(newCell);
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTIONS
+// generates a random integer between 1 and max
+function randomNumber(max) {
+    const rnd = Math.floor(Math.random() * max + 1);
+    return rnd
+}
