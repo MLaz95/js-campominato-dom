@@ -1,0 +1,36 @@
+
+body{
+    background-color: #2f2f2f;
+}
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cell{
+    aspect-ratio: 1 / 1;
+    border: solid 1px white;
+    color: white;
+    background-color: #107E7D;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* cell size adjust based on grid size */
+.easy{
+    width: calc(100% / 10);
+}
+.medium{
+    width: calc(100% / 9);
+}
+.hard{
+    width: calc(100% / 7);
+}
+
+.active{
+    background-color: #A09BE7;
+}
