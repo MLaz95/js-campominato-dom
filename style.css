@@ -38,3 +38,7 @@ body{
 .bomb{
     background-color: #FE5F55;
 }
+
+.no-click{
+    pointer-events: none;
+}

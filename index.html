@@ -13,20 +13,26 @@
 
     
     <div class="p-5 my-5 rounded-4" id="container">
-        <div class="d-flex justify-content-end py-3 gap-2">
-            <!-- difficulty selector -->
-            <select name="difficulty" id="difficulty" class="btn btn-outline-light">
-                <option value="100">Easy</option>
-                <option value="81">Medium</option>
-                <option value="49">Hard</option>
-            </select>
-            <!-- play button -->
-            <button class="btn btn-outline-light" id="button">Play</button>
+        <div class="d-flex justify-content-between py-3">
+
+            <h3 id="result" class="text-white justify-self-start align-items"></h3>
+            <div>
+                <!-- difficulty selector -->
+                <select name="difficulty" id="difficulty" class="btn btn-outline-light">
+                    <option value="100">Easy</option>
+                    <option value="81">Medium</option>
+                    <option value="49">Hard</option>
+                </select>
+                <!-- play button -->
+                <button class="btn btn-outline-light" id="button">Play</button>
+            </div>
         </div>
 
         <div id="grid" class="d-flex flex-wrap">
             <!-- cells are added here -->
         </div>
+
+        
     </div>
 
     
