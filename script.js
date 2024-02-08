@@ -37,11 +37,17 @@ buttonElement.addEventListener('click', function(){
         }
 
         newCell.innerHTML = i;
+        let cellValue = Number(newCell.innerHTML);
 
         // marks a cell as active and logs its number
         newCell.addEventListener('click', function(){
-            newCell.classList.add('active');
-            console.log(newCell.innerHTML);
+            if(bombsArray.includes(cellValue)){
+                newCell.classList.add('bomb');
+            }else{
+                newCell.classList.add('active');
+                console.log(newCell.innerHTML);
+            }
+            
         });
 
         gridElement.append(newCell);
